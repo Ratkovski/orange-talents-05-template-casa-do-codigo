@@ -37,6 +37,8 @@ public class Autor {
 	@Column(nullable = false)
 	private LocalDateTime data = LocalDateTime.now();
 
+	
+	@Deprecated
 	public Autor() {
 
 	}

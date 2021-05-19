@@ -5,11 +5,14 @@ import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.zupacademy.ratkovski.casadocodigo.config.validation.UnicoEmailValidator;
 import br.com.zupacademy.ratkovski.casadocodigo.dto.AutorDto;
 import br.com.zupacademy.ratkovski.casadocodigo.modelo.Autor;
 
@@ -26,6 +29,21 @@ public class AutorController {
 	@PersistenceContext
 	private EntityManager em; // abrir e fechar transações automaticamente
 // recurso responsável por realizar as operações de sincronismo com o banco de dados
+
+	@Autowired
+	private UnicoEmailValidator unicoEmailValidator;
+
+	/** Para validações customizadas **/
+	/**
+	 * um método publico com esta notation ele é utilizado já no primeiro request
+	 * feito que bate no metodo deste controller o codigo dentro do init é executado
+	 * para fazer configurações adicionais que vao ser colocadas na execução da
+	 * request dest controller
+	 **/
+	@InitBinder
+	public void init(WebDataBinder binder) {
+		binder.addValidators(unicoEmailValidator);
+	}
 
 	@PostMapping(value = "/autor")
 	@Transactional

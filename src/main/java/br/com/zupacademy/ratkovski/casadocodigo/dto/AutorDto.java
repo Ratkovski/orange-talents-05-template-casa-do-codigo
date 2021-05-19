@@ -22,6 +22,8 @@ public class AutorDto {
 	@Column(nullable = false)
 	@Size(max = 400, message = "Número máximo de caracteres é 400")
 	private String descricao;
+	
+	
 
 	public AutorDto(@NotBlank(message = "O campo nome é obrigatório") String nome,
 			@NotBlank(message = "O campo e-mail é obrigatório") @Email(message = "Digite um e-mail válido") String email,
@@ -32,21 +34,21 @@ public class AutorDto {
 		this.descricao = descricao;
 
 	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public String getDescricao() {
-		return descricao;
-	}
+/**não tinha nescessidade*/
+	/*
+	 * public String getNome() { return nome; }
+	 * 
+	 * public String getEmail() { return email; }
+	 * 
+	 * public String getDescricao() { return descricao; }
+	 */
 
 	public Autor toModel() {
 		return new Autor(nome, email, descricao);
+	}
+	
+	public String getEmail() { 
+		return this.email;
 	}
 
 }
