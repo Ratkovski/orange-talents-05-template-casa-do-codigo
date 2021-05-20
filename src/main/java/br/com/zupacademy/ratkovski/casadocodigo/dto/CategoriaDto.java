@@ -5,14 +5,15 @@ import javax.validation.constraints.NotBlank;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 
+import br.com.zupacademy.ratkovski.casadocodigo.config.validation.UniqueValue;
 import br.com.zupacademy.ratkovski.casadocodigo.modelo.Categoria;
-import net.bytebuddy.asm.Advice.This;
 
 public class CategoriaDto {
 
 
 	@NotBlank(message = "O campo nome da categoria é obrigatório")
 	@Column(nullable = false)
+	@UniqueValue(domainClass = Categoria.class, fieldName = "nome")
 	private String nome;
 	
 	/*

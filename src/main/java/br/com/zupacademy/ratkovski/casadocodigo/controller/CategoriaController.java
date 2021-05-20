@@ -27,8 +27,10 @@ public class CategoriaController {
 	
 	  @Autowired 
 	  private CategoriaRepository categoriaRepository ;
+	  /**
 	  @Autowired 
 	  private CategoriaUnicaValidator categoriaUnicaValidator;
+	  **/
 
 		/** Para validações customizadas **/
 		/**
@@ -37,11 +39,12 @@ public class CategoriaController {
 		 * para fazer configurações adicionais que vao ser colocadas na execução da
 		 * request dest controller
 		 **/
-		@InitBinder
-		public void init(WebDataBinder binder) {
-			binder.addValidators(categoriaUnicaValidator);
-		}
 	
+		/*
+		 * 
+		 * @InitBinder public void init(WebDataBinder binder) {
+		 * binder.addValidators(categoriaUnicaValidator); }
+		 */
 	  
 	  
 	 // @PostMapping(value = "/categoria")

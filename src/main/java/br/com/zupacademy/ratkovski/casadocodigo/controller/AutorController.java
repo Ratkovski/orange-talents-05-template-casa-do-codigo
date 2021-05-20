@@ -32,9 +32,11 @@ public class AutorController {
 	private EntityManager em; // abrir e fechar transações automaticamente
 // recurso responsável por realizar as operações de sincronismo com o banco de dados
 
+	/**
+	
 	@Autowired
 	private UnicoEmailValidator unicoEmailValidator;
-
+**/
 	/** Para validações customizadas **/
 	/**
 	 * um método publico com esta notation ele é utilizado já no primeiro request
@@ -42,10 +44,12 @@ public class AutorController {
 	 * para fazer configurações adicionais que vao ser colocadas na execução da
 	 * request dest controller
 	 **/
-	@InitBinder
-	public void init(WebDataBinder binder) {
-		binder.addValidators(unicoEmailValidator);
-	}
+	
+	/*
+	 * psso tirar por causa do unique value validator criado
+	 * @InitBinder public void init(WebDataBinder binder) {
+	 * binder.addValidators(unicoEmailValidator); }
+	 */
 
 	@PostMapping(value = "/autor")
 	@Transactional

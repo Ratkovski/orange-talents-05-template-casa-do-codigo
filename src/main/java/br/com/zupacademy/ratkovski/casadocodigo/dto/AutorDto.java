@@ -5,7 +5,9 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+import br.com.zupacademy.ratkovski.casadocodigo.config.validation.UniqueValue;
 import br.com.zupacademy.ratkovski.casadocodigo.modelo.Autor;
+import br.com.zupacademy.ratkovski.casadocodigo.modelo.Categoria;
 
 public class AutorDto {
 
@@ -15,6 +17,7 @@ public class AutorDto {
 
 	@NotBlank(message = "O campo e-mail é obrigatório")
 	@Column(nullable = false)
+	@UniqueValue(domainClass = Autor.class, fieldName = "email")
 	@Email(message = "Digite um e-mail válido")
 	private String email;
 
