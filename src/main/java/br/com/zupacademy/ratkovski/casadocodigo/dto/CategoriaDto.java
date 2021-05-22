@@ -10,12 +10,11 @@ import br.com.zupacademy.ratkovski.casadocodigo.modelo.Categoria;
 
 public class CategoriaDto {
 
-
 	@NotBlank(message = "O campo nome da categoria é obrigatório")
 	@Column(nullable = false)
 	@UniqueValue(domainClass = Categoria.class, fieldName = "nome")
 	private String nome;
-	
+
 	/*
 	 * Anotação para evitar erro "JSON parse error: Cannot construct instance of.."
 	 * Pois quando tem um atributo ele se perde
@@ -27,21 +26,12 @@ public class CategoriaDto {
 		this.nome = nome;
 	}
 
-	public Categoria toModel() {	
+	public Categoria toModel() {
 		return new Categoria(nome);
 	}
-	
-
-	
 
 	public String getNome() {
 		return this.nome;
 	}
 
-	
-	
-
-	
-	
-	
 }

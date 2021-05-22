@@ -50,6 +50,15 @@ public class Autor {
 		this.descricao = descricao;
 
 	}
+	
+	
+	
+
+	public Long getId() {
+		return id;
+	}
+
+
 
 	@Override
 	public String toString() {
