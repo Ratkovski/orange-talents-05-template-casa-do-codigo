@@ -58,7 +58,9 @@ public class Livro {
 	@Valid
 	@ManyToOne
 	private Categoria categoria;
-
+	
+	
+@Deprecated
 	public Livro() {
 
 	}
