@@ -26,6 +26,7 @@ public class DetalhesLivroDto {
 	    sumario = livro.getSumario();
 		isbn = livro.getIsbn();
 		numeroPaginas = livro.getNumeroPaginas();
+		/**dica de como usar o DateTimeFormatter**/
 		/**dataPublicacao = livro.getDataPublicacao().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));**/
 		
 	}
