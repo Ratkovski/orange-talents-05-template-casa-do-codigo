@@ -132,6 +132,9 @@ public class Livro {
 				+ ", autor=" + autor + ", categoria=" + categoria + "]";
 	}
 
+
+
+
 }
 
     
