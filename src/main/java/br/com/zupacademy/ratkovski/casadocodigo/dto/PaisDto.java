@@ -15,7 +15,7 @@ public class PaisDto {
 	@UniqueValue(domainClass = Pais.class, fieldName = "nome")
 	private String nome;
 	
-	/**lembar de usar o json quando for somente uma para n se perder**/
+	/**lembrar de usar o json quando for somente uma para n se perder**/
 	@JsonCreator(mode = JsonCreator.Mode.PROPERTIES)
 	public PaisDto(@NotBlank(message = "O campo nome é obrigatório") String nome) {
 		super();
