@@ -31,6 +31,7 @@ public class LivroController {
 		//1
 		Livro livro = livroDto.toModel(em);
 		em.persist(livro);
+		
 		return livro.toString();
 	}
 	
